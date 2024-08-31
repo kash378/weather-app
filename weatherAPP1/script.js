@@ -6,7 +6,7 @@ let cityInput = document.getElementById('city_input'),
     api_key = '9c97c1d95341f6cb18f239e94d2198e9',
     locationBtn = document.getElementById('locationBtn'),
     currentWeatherCard = document.querySelectorAll('.weather-left .card')[0],
-    fiveDaysForecastCard = document.querySelector('.day-forecast'),
+    SevenDaysForecastCard = document.querySelector('.day-forecast'),
     aqiCard = document.querySelectorAll('.highlights .card')[0],
     sunriseCard = document.querySelectorAll('.highlights .card')[1],
     humidityval = document.getElementById('humidityval'),
@@ -160,14 +160,14 @@ function getWeatherDetails(name, lat, lon, country, state){
                     return uniqueForecastDays.push(forecastDate);
                 }
             });
-            fiveDaysForecastCard.innerHTML = '';
-            for (let i = 1; i < fiveDaysForecast.length; i++) {
-                let date = new Date(fiveDaysForecast[i].dt_txt);
-                fiveDaysForecastCard.innerHTML += `
+            SevenDaysForecastCard.innerHTML = '';
+            for (let i = 1; i < SevenDaysForecast.length; i++) {
+                let date = new Date(SevenDaysForecast[i].dt_txt);
+                SevenDaysForecastCard.innerHTML += `
                     <div class="forecast-item">
                         <div class="icon-wrapper">
-                            <img src="https://openweathermap.org/img/wn/${fiveDaysForecast[i].weather[0].icon}.png" height="60px" width="60px">
-                            <span>${(fiveDaysForecast[i].main.temp).toFixed(2)}&deg;C</span>
+                            <img src="https://openweathermap.org/img/wn/${SevenDaysForecast[i].weather[0].icon}.png">
+                            <span>${(SevenDaysForecast[i].main.temp).toFixed(2)}&deg;C</span>
                             <span>${date.getDate()} ${months[date.getMonth()]}</span>
                             <span>${days[date.getDay()]}</span>
                         </div>
