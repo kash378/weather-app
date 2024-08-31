@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forcast App</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png" rel="icon">
+    <!-- add the links of bootstrap ,fonts ,icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300;1,500;1,900&display=swap" rel="stylesheet">
+<script src='https://kit.fontawesome.com/4c729db828.js' crossorigin='anonymous'></script>
+
+<!-- Adding js -->
+    <script src= 
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+            integrity= 
+    "sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script> 
+        <script src= 
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+            integrity= 
+    "sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer">
+        </script>
+</head>
+<body style="background-image: url('https://static.toiimg.com/thumb/msid-107061434,width-960,height-1280,resizemode-6.cms'); height:100%; width:100%;">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid"style="background: black;">
+          <a class="navbar-brand" href="#"><img src="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png"  height="50px" width="50px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html" style="color:white;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contact.html"style="color:white;">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="about.html"style="color:white;">About</a>
+              </li>
+            </ul>
+            <div class="collapse navbar-collapse" id="navbarNav" style="padding-left:600px; font-size:25px;">
+              <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://web.whatsapp.com/" target="_blank" style="color:white;"><i class="fa-brands fa-square-whatsapp"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://github.com/kash378" target="_blank" style="color:white;"><i class="fa-brands fa-square-github"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://twitter.com"style="color:white;" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://instagram.com"style="color:white;" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://facebook.com"style="color:white;" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+          </ul></div>
+          </div>
+        </div>
+      </nav>
+<!--end navigation-->
+
+<!--start slider-->
+<div id="carouselExampleDark" class="carousel carousel-dark slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://media.istockphoto.com/id/1007768414/photo/blue-sky-with-bright-sun-and-clouds.jpg?s=612x612&w=0&k=20&c=MGd2-v42lNF7Ie6TtsYoKnohdCfOPFSPQt5XOz4uOy4=" class="d-block w-100 " height="350px" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="font-size: 30px;">Blue sky with bright sun and clouds</h5>
+        <p style="color:white; font-size: 20px;">The sun's heat and light make objects around us shine and make us fell warm.</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://cdn.zeebiz.com/sites/default/files/2023/07/24/252651-delhi-weather-today-forecast.jpg?im=FitAndFill=(1200,900)" height="350px" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="font-size: 30px;">Cloudy Weather</h5>
+        <p style="color:white; font-size: 20px;">When the sky is cloudy, it's so full of clouds that you can't see the sun</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://e0.pxfuel.com/wallpapers/24/557/desktop-wallpaper-attractive-spring-reason-best-suny-best-landscape.jpg" height="350px" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="font-size: 30px; color:red;">Spring Season</h5>
+        <p style="color:white; font-size: 20px;">MOst people love spring for the freshness and joy it brings to them every day.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!--end slider-->
+
+
+
+  <!--weather app design-->
+  <div id="h">
+    <div class="header">
+        <h1 style="color:white;">Weather</h1>
+        <div class="weather-input">
+            <input type="text" name="city" id="city_input" placeholder="Enter City Name" spellcheck="false">
+            <button type="button" id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i> Search
+            </button>
+            <button type="button" id="locationBtn">
+                <i class="fa-solid fa-location-crosshairs"></i> Current Location
+            </button>
+        </div>
+    </div>
+    <div class="weather-data">
+        <div class="weather-left">
+            <div class="card">
+                <div class="current-weather">
+                    <div class="details">
+                        <p>Now</p>
+                        <h2>__&deg;C</h2>
+                        <p>____</p>
+                    </div>
+                    <div class="weather-icon">
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" height="60px"
+                        width="60px">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p><i class="fa-regular fa-calendar"></i>______</p>
+                    <p><i class="fa-solid fa-location-dot"></i>______</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2>7 days Forecast</h2>
+                <div class="forecast.item">
+                  <div class="icon-wrapper">
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+                      <span>___&deg;C</span>
+                  <span>____</span>
+                  <span>____</span>
+              </div>
+          </div>
+                <div class="forecast.item">
+                  <div class="icon-wrapper">
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+                      <span>___&deg;C</span>
+                  <span>____</span>
+                  <span>____</span>
+              </div>
+          </div>
+
+          <div class="forecast.item">
+            <div class="icon-wrapper">
+              <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+                <span>___&deg;C</span>
+            <span>____</span>
+            <span>____</span>
+        </div>
+    </div>
+     
+    <div class="forecast.item">
+      <div class="icon-wrapper">
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+          <span>___&deg;C</span>
+      <span>____</span>
+      <span>____</span>
+  </div>
+</div>
+<div class="forecast.item">
+  <div class="icon-wrapper">
+    <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+      <span>___&deg;C</span>
+  <span>____</span>
+  <span>____</span>
+</div>
+</div>
+<div class="forecast.item">
+  <div class="icon-wrapper">
+    <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+      <span>___&deg;C</span>
+  <span>____</span>
+  <span>____</span>
+</div>
+</div>
+<div class="forecast.item">
+  <div class="icon-wrapper">
+    <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+      <span>___&deg;C</span>
+  <span>____</span>
+  <span>____</span>
+</div>
+</div>
+        </div>
+      </div>
+      <div class="weather-right">
+        <h2>Today's Highlights</h2>
+        <div class="highlights">
+          <div class="card">
+            <div class="card-head">
+              <p>Air Quality Index</p>
+              <p class="air-index aqi-1">Good</p>
+          </div>
+          
+            <div class="air-indices">
+              <i class="fa-solid fa-wind"></i>
+              <div class="item">
+                <p>PM2.5</p>
+                <h2>___</h2>
+              </div>
+              <div class="item">
+                <p>PM10</p>
+                <h2>___</h2>
+              </div>
+              <div class="item">
+                <p>S02</p>
+                <h2>___</h2>
+              </div>
+              <div class="item">
+                <p>CO</p>
+                <h2>___</h2>
+              </div>
+              <div class="item">
+                <p>NO</p>
+                <h2>___</h2>
+              </div>
+              <div class="item">
+                <p>NO2</p>
+                <h2>___</h2>
+              </div>
+              <div class="item">
+                <p>NH4</p>
+                <h2>___</h2>
+              </div>
+              <div class="item">
+                <p>O3</p>
+                <h2>___</h2>
+              </div>
+              </div>
+          </div>
+          <div class="card">
+            <p>Sunrise & Sunset</p>
+         <div class="sunrise-sunset">
+            <div class="item">
+              <div class="icon">
+                <i class="fa-solid fa-sun"></i>
+            </div>
+            
+            <p>Sunrise</p>
+            <h2>____</h2>
+          
+          </div>
+          <div class="item">
+            <div class="icon">
+              <i class="fa-regular fa-sun"></i>
+          </div>
+          <div>
+          <p>Sunset</p>
+          <h2>____</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <p>Humidity</p></div>
+      <div class="card-item">
+        <i class="fa-solid fa-droplet"></i>
+        <h2 id="humidityval">_____%</h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <p>Pressure</p></div>
+      <div class="card-item">
+        <i class="fa-regular fa-compass"></i>
+        <h2 id="pressureval">____hpa</h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <p>Visibility</p></div>
+      <div class="card-item">
+        <i class="fa-solid fa-cloud"></i>
+        <h2 id="Visibilityval">____km</h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <p>Wind speed</p></div>
+      <div class="card-item">
+        <i class="fa-solid fa-location-arrow"></i>
+        <h2 id="windspeedval">____m/s</h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <p>Feels Like</p></div>
+      <div class="card-item">
+        <i class="fa-solid fa-temperature-three-quarters"></i>
+        <h2 id="feelsval">_____&deg C</h2>
+      </div>
+    </div>
+  </div>
+   <h2>Today at</h2>
+   <div class="hourly-forecast">
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" >
+    <p>____&deg C</p>
+    </div>
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+    <p>____&deg C</p>
+    </div>
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+    <p>____&deg C</p>
+    </div>
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+    <p>____&deg C</p>
+    </div>
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+    <p>____&deg C</p>
+    </div>
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+    <p>____&deg C</p>
+    </div>
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+    <p>____&deg C</p>
+    </div>
+    <div class="card" style="width:80px;">
+      <p>9 AM</p>
+      <img src="https://openweathermap.org/img/wn/10d@2x.png" height="60px" width="60px">
+    <p>____&deg C</p>
+    </div>
+   </div>
+</div>
+    </div>
+    
+    </div>
+
+    <!-- start footer -->
+    <div id="footer">
+      <center><h1>Weather App</h1></center><hr>
+    <div style="float:left; margin-top:50px;margin-left:320px; word-spacing: 15px; font-size: 27px;">
+      <a href="www.facebook.com" style="color:white;"><i class="fa-brands fa-square-facebook"></i></a>
+      <a href="www.telegram.com" style="color:white;"><i class="fa-brands fa-square-telegram"></i></a>
+      <a href="www.instagram.com"style="color:white;"><i class="fa-brands fa-square-instagram"></i></a>
+      <a href="www.twitter.com"style=" color:white;"><i class="fa-brands fa-square-x-twitter"></i></a>
+      <a href="youtube.com"></a>
+      <p style="font-size: 15px;margin-top:20px;word-spacing: 10px;text-align: center;">&copy; 2024 weatherapp.com All rights reserved</p>
+    </div>
+    <div><p style="float:left; font-size: 14px; padding-left: 20px;">The content and images used on this site are copyright protected and copyrights vests with the respective owners. The usage of the content and  images on this website <p style="float:left; margin-left:50px;">is intended to promote the 
+      works and no endorsement of the artist shall be implied. Unauthorized use is prohibited and punishable by law.</p>
+    </p></div>
+   </div>
+
+      <!-- bootstrap js script -->
+       <script src="https://momentjs.com/downloads/moment.min.js"></script>
+      <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
